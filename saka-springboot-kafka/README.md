@@ -1,5 +1,13 @@
+## saka-springboot-kafka
 
+### start kafka local
+> docker-compose -f ../etc/local/docker-compose.yml up
 
-curl -X POST -F 'message=test' http://localhost:9000/kafka/publish
+### start application
+> ./gradlew bootRun
 
-for i in {1..100}; do curl -X POST -F 'message=test' http://localhost:9000/kafka/publish; done;
+### single test
+> curl -X POST -F 'message=test' http://localhost:9000/kafka/publish
+
+### multi test
+> for i in {1..100}; do curl -X POST -F 'message=test' http://localhost:9000/kafka/publish; done;
